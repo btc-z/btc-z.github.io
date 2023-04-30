@@ -1,0 +1,73 @@
+site_name: ZLAB
+
+plugins:
+  - blog:
+      archive: false
+      post_url_date_format: yyyy/MM/dd
+      blog_dir: posts
+  - redirects:
+      redirect_maps:
+        'posts/index.md': 'index.md'
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
+theme:
+  features:
+    - content.tooltips
+    - toc.follow
+  font:
+    text: Roboto Mono
+  name: material
+  logo: assets/infinity.png
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: blue grey
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: blue grey
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+# Header
+
+# Footer
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: G-X956BD08NG
+
+copyright: Copyright &copy; 2024 zLab
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - pymdownx.snippets
+  - pymdownx.details
+  - footnotes
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
