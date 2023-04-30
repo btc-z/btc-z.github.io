@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "zlab"
+version = "0.1.1"
+description = "mkdocs blog"
+authors = ["zlab"]
+readme = "README.md"
+packages = [{include = "btc_z"}]
+
+[tool.poetry.dependencies]
+python = "^3.13.1"
+mkdocs-material = "^9.5.47"
+mkdocs-git-revision-date-localized-plugin = "^1.2.0"
+mkdocs-redirects = "^1.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
