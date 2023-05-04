@@ -5,11 +5,13 @@
 
 ### Malthusian Delusion
 
-> "You can never step in the same river twice." - Heraclitus
+> "You can never step in the same river twice." 
+>
+> \- Heraclitus
 
 Malthusian thinking dictates that an uncontrolled population would eventually outpace the ability of Earth to produce resources,  leading to war, famine, and death. Yet, no raw material in all human history has ever run out. Even the rarest metal on earth, gold, has an annual production rate that has been ever-increasing for thousands of years. It is perhaps the biggest mistake for mankind to think that resources are scarce, the only thing that is scarce to human civilization is time, that is pure human time towards producing the resources. 
 
-Why is the idea that "resource is scarce and will eventually run out" so persistent and deeply ingrained? Beyond humans' survival instinct and natural tendency to distaste material reduction, few people examine the underlying assumptions of Malthusianism. With a moderate amount of geology knowledge and logic, one can realize that scarcity is a function of human production time towards that resource and technological advancements to mine this resource.
+Why is the idea that "resource is scarce and will eventually run out" so persistent and deeply ingrained? Beyond humans' survival instinct and natural tendency to distaste material reduction, few people examine the underlying assumptions of Malthusianism. With a moderate amount of geology knowledge and logic, one can realize that scarcity is a function of two inputs: human time of producing the resource and technological advancements to mine this resource.
 
 ### A bit of Geology
 
@@ -29,13 +31,36 @@ Production over human time, therefore, will repeat to be the most fundamental me
 
 ## Bitcoin as a store of value
 
-> "It is the mark of an educated mind to be able to entertain a thought without accepting it." - Artistotle
+> "It is the mark of an educated mind to be able to entertain a thought without accepting it." 
+>
+> \- Artistotle
 
-Because of the prevalent Malthusian beliefs that resource is scarce, arguments against Bitcoin as a store of value can be formulated as the following:
+Because of the prevalent Malthusian beliefs that resource is scarce, arguments against Bitcoin are many. We will examine a few popular ones:
 
-- Many physical assets like gold or silver are equally scarce and take great human efforts to produce, so these physical assets provide stronger vehicles to store value than Bitcoin OR
-- Bitcoin lacks intrinsic value OR
-- Bitcoin's price is highly volatile OR
+- Bitcoin lacks intrinsic value
+- Bitcoin's price is highly volatile
 - Bitcoin ownership is most concentrated and held by a small number of individuals and entities, often known as "whales"
 
-We shall entertain and examine each of these thoughts carefully.
+
+### Intrinsic Value
+
+> "The real price of every thing, what every thing really costs to the man who wants to acquire it, is the toil and trouble of acquiring it." 
+>
+> \- The Wealth of Nations, Adam Smith (1776)
+
+No one has better explained the intrinsic value of money than Adam Smith: the intrinsic value of money is closely related to the difficulty of obtaining it. He insightfully pointed out, "The harder it is to obtain, the more expensive it is. Conversely, what can be easily obtained is relatively cheap." This view profoundly reveals the relationship between the value of money and the cost of production or acquisition.
+
+In this context, we can understand why quickly printing banknotes leads to currency devaluation. When governments turn on their  "money printers" through quantitative easing policies, the supply of money increases rapidly, and the difficulty of obtaining money decreases, thereby reducing the intrinsic value of money and increasing the risk of inflation, which we all witnessed in the past year.
+
+
+History is a carousel on which humanity rides, endlessly repeating its cycles, yet each time surprised by the familiar view. Looking back at history, all of the following events have one thing in common: rapid and massive printing of banknotes leads to inflation. Power is often extremely irrational in the face of greed：
+
+
+- Weimar Republic (1920s): Germany's excessive money printing to pay war reparations led to hyperinflation.
+- Zimbabwe (2000s): Economic mismanagement and excessive currency printing caused severe hyperinflation.
+- Hungary (1946): Post-WWII reconstruction financed by printing currency resulted in record hyperinflation.
+- Venezuela (2010s): Falling oil prices, political instability, and money printing fueled hyperinflation.
+- Argentina (1980s, 2000s): Expansionary monetary policies and fiscal deficits contributed to high inflation.
+- US Civil War: Issuance of fiat "greenbacks" to fund the war led to inflationary pressures.
+- US Great Inflation (1970s): Expansionary monetary policy, oil shocks, and supply disruptions caused high inflation.
+- **Today**: A staggering $13 trillion has been infused into the economy through monetary expansion: $5.2 trillion allocated to combat the COVID-19 pandemic, $4.5 trillion deployed through quantitative easing measures, and $3 trillion dedicated to infrastructure investment. For context, World War II, the costliest conflict in history, incurred expenditures of $4.7 trillion. Remarkably, the cumulative financial burden of all of America's military engagements since 2001 amounts to less than the $5.2 trillion allocated for pandemic relief. Now, how surprised are you to see the staggering inflation happening today? 
