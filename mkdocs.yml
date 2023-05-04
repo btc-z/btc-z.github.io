@@ -1,4 +1,11 @@
 site_name: Bitcoin Philosopher
+
+# Shows last modified and creation time for a post
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+
 theme:
   name: material
 
@@ -19,6 +26,18 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-      
+
+# Header
+repo_url: https://github.com/btc-z
+
+# Footer
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/btc-z
+
+# Footer Copyright      
+copyright: Copyright &copy; 2023 btc-z
 
     
