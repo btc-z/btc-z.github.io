@@ -2,7 +2,7 @@
 name = "btc-z-github-io"
 version = "0.1.0"
 description = ""
-authors = ["btc-z <trust8tverify@gmail.com>"]
+authors = ["zlab"]
 readme = "README.md"
 packages = [{include = "btc_z"}]
 

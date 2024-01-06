@@ -1,4 +1,4 @@
-# Bitcoin Philosopher
+# Zlab
 
 Static site made with Mkdocs Material, hosted on GitHub Page.
 

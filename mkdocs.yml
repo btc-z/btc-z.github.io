@@ -1,4 +1,4 @@
-site_name: Bitcoin Philosopher
+site_name: zLab
 
 # Shows last modified and creation time for a post
 plugins:
@@ -8,7 +8,7 @@ plugins:
 
 theme:
   name: material
-
+  logo: assets/郭.png
   palette:
 
     # Palette toggle for light mode
@@ -28,16 +28,12 @@ theme:
         name: Switch to light mode
 
 # Header
-repo_url: https://github.com/btc-z
 
 # Footer
 extra:
   generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/btc-z
-
+  
 # Footer Copyright      
-copyright: Copyright &copy; 2023 btc-z
+copyright: Copyright &copy; 2023 zLab
 
     
