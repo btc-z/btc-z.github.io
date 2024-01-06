@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "btc-z-github-io"
+name = "zlab"
 version = "0.1.0"
 description = ""
 authors = ["zlab"]
@@ -8,7 +8,7 @@ packages = [{include = "btc_z"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-mkdocs = "^1.4.3"
+mkdocs = "^1.5.3"
 mkdocs-material = "^9.1.9"
 mkdocs-git-revision-date-localized-plugin = "^1.2.0"
 

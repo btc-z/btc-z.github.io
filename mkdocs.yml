@@ -1,10 +1,16 @@
 site_name: zLab
 
-# Shows last modified and creation time for a post
 plugins:
+  - blog:
+      blog_dir: .
+  - search
+  - tags
   - git-revision-date-localized:
       enable_creation_date: true
       type: timeago
+
+nav:
+  - index.md
 
 theme:
   name: material
@@ -32,7 +38,7 @@ theme:
 # Footer
 extra:
   generator: false
-  
+
 # Footer Copyright      
 copyright: Copyright &copy; 2023 zLab
 
