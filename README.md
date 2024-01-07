@@ -1,11 +1,15 @@
-# Zlab
+# zlab
 
-Static site made with Mkdocs Material, hosted on GitHub Page.
+I built this blog using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/getting-started/)
 
+## What goes into my blog
 
-## Philosophy of my blog writing
+- anything philosophical
+- things that I am excited about and share what I have learned
+- puzzles
+- mini-projects for the kicks
 
-- Focus on the content
-- Rapid and auto deployment
-- Less is more
+## Disclaimer
 
+1. I write lots of typos. I accept that, and I ignore complaints.
+2. My blog's primary audience is myself. (Yes, this is a self-reminder). Write for my personal benefit and my personal interest only, always.

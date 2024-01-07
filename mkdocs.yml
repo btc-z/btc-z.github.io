@@ -2,6 +2,7 @@ site_name: zLab
 
 plugins:
   - blog:
+      post_url_date_format: yyyy/MM/dd
       blog_dir: .
   - search
   - tags
