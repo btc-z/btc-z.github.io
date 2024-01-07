@@ -6,7 +6,7 @@ categories:
 ---
 
 
-# Why New Year Resolution Fails You
+# NYR No More
 
 Perhaps, my most habitual mental masturbation is to rash into planning new year resolution (or starting to have an anxiety of not writing one) towards end of a year. Yet, nearly 95% of them are destined to fail, causing more anxieties. Some of them don't make any sense, while others do but I later just forgot them about...
 
