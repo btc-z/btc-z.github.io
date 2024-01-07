@@ -8,12 +8,12 @@ categories:
 
 # NYR No More
 
-Perhaps, my most habitual mental masturbation in every December is rashing to planning new year resolutions (or starting to having an anxiety of not writing one). Most of my plans were destined to fail. Some didn't make any sense, while others do but I later just forgot about them...
+Perhaps, my most habitual mental masturbation in every December is rashing into planning new year resolutions (or starting to having an anxiety of not writing one). Most of my plans were destined to fail. Some didn't make any sense, while others do but I later just forgot about them...
 
-This year, I want to do somehting different. Instead of making new year resolutions, I want to accept the failure first. I won't accomplish everything I plan. My plan will change, and that's okay. Split step goals. 🎾
+This year, instead of making new year resolutions, I accept my failures. I won't accomplish everything I plan. My plan will change, and that's okay. Split step goals. 🎾
 
-Besides, time is continuous anyway, why treat it otherwise. Yes, the clock turns, and yes, we live in a solar system with a moon orbits around the earth, and the earth orbits around the sun, blah blah... But in the end, time is just an artificial concept. Clock measures nothing but itself.
+Besides, time is continuous anyway, why treat it otherwise. Yes, the clock turns, and yes, we live in a solar system with moon orbiting the earth, and earth orbiting the sun. But ultimately time is an artificial concept. Clock measures itself.
 
-With failure accepted, I embark my journey only to record my attempts that I can later reflect, and NOT to hallucinate about the future or to regret the past. 
+With failure accepted, I embark my journey only to record my attempts that I can later reflect on, and NOT to hallucinate about the future or to regret the past. 
 
 I will do so imperfectly, and that is ok. 
