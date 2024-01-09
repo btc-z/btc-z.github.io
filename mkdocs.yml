@@ -40,7 +40,11 @@ theme:
 extra:
   generator: false
 
-# Footer Copyright      
 copyright: Copyright &copy; 2023 zLab
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
     

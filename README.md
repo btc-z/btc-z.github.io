@@ -12,4 +12,4 @@ I built this blog using [Material for MkDocs](https://squidfunk.github.io/mkdocs
 ## Disclaimer
 
 1. I write lots of typos. I accept that, and I ignore complaints.
-2. My blog's primary audience is myself. (Yes, this is a self-reminder). Write for my personal benefit and my personal interest only, always.
+2. My blog's primary audience is myself. (Yes, this is a self-reminder). Write for my benefit and interest only, always.
