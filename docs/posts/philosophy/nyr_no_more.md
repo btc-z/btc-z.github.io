@@ -7,14 +7,13 @@ categories:
 
 # Self Reminder
 
-Perhaps, my most habitual mental masturbation every December is rashing into planning New Year's resolutions (or starting to have an anxiety of not writing one). 
+!!! Note
 
-Most of my plans were destined to fail. Some didn't make any sense, while others did but I later just forgot about them...
+    Perhaps, my most habitual mental masturbation every December is rushing to plan New Year's resolutions or starting to feel anxious about not having written one. 
 
-This year, instead of making New Year's resolutions, I accept my failures. I won't accomplish everything I plan. My plan will change, and that's okay. Split step goals. 🎾
+    Most of my plans were destined to fail. Some didn't make any sense, and the rest I would forget.
 
-Besides, time is continuous anyway, why treat it otherwise? Yes, the clock turns, and yes, we live in a solar system with the moon orbiting the earth, and the earth orbiting the sun. But ultimately time is an artificial concept. A Clock measures itself.
+    So, I want to start this year by first accepting my failures. It is okay for some or all of my plans to fail. My plans will change, and I accept that.
 
-With failure accepted, I embark on my journey only to record my attempts that I can later reflect on, and NOT to hallucinate about the future or to regret the past. 
+    Time is continuous. Clock measures itself.
 
-I will do so imperfectly, and that is ok. 
