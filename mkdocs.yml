@@ -41,6 +41,9 @@ theme:
 # Footer
 extra:
   generator: false
+  analytics:
+    provider: google
+    property: G-X956BD08NG
 
 copyright: Copyright &copy; 2023 zLab
 
