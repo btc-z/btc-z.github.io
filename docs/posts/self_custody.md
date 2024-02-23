@@ -52,7 +52,7 @@ I have studied and sketched the ColdCard security model below:
 
 The PIN is for the ColdCard hardware device only. Its primary function is to encrypt the wallet and to protect the private keys inside. Therefore, you do not need the device PIN to recover your Bitcoin wallet. To recover your Bitcoin wallet, you only need mnemonic phrases and the extension word (passphrase).
 
-Having access to the device PIN implies having access to the BIP-39 mnemonic 12/24 words, and any 13th or 15th extension word. Because of this, you should use a long and high-entropy PIN. By default, ColdCard will brick the device if entered incorrectly 13 times. You can also set an idle timeout to avoid “evil maid attacks”, this is very similar to the auto-lock feature on your iPhone. In addition, if you rarely spend Bitcoin, you can even set a login countdown time to further delay the next login time to as many as 28 days.
+Having access to the device PIN implies having access to the BIP-39 mnemonic 12/24 words, and any 13th or 25th extension word. Because of this, you should use a long and high-entropy PIN. By default, ColdCard will brick the device if entered incorrectly 13 times. You can also set an idle timeout to avoid “evil maid attacks”, this is very similar to the auto-lock feature on your iPhone. In addition, if you rarely spend Bitcoin, you can even set a login countdown time to further delay the next login time to as many as 28 days.
 
 For plausible deniability, you can set a trick PIN to create a duress wallet and deposit a small amount of sats to act as a honey pot in case you are under threat.
 
