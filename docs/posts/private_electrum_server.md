@@ -11,7 +11,7 @@ categories:
 
 ![](../assets/electrum/bitcoin_vault.png)
 
-The moment you decide to take [self-custody]((./self_custody.md)) of your Bitcoin, you become your own bank. To safeguard your assets requires understanding basic security, recognizing potential risks, and implementing protective measures against hackers.
+The moment you decide to take [self-custody](./self_custody.md) of your Bitcoin, you become your own bank. To safeguard your assets requires understanding basic security, recognizing potential risks, and implementing protective measures against hackers.
 
 $500 worth of BTC might not necessitate the strongest vault, the need for stringent security grows alongside your assets. Initially, you might find yourself connecting to a public Electrum server. This is a significant first step away from relying on centralized exchanges (E.g., Mt.Gox 2014, Bitfinex 2016, QuadrigaCX 2019, Cryptopia 2019, FCoin 2020, OKEx 2020, Thodex 2021, FTX 2022!!!). So you should pat yourself on the back if you have started offloading your assets from CEX. However, using a public Electrum server poses several risks:
 
