@@ -14,10 +14,13 @@ nav:
   - index.md
 
 theme:
+  features:
+    - content.tooltips
+    - toc.follow
   font:
-    text: Serif
+    text: Roboto Mono
   name: material
-  logo: assets/郭.png
+  logo: assets/bitcoin.png
   palette:
 
     # Palette toggle for light mode
@@ -48,7 +51,10 @@ extra:
 copyright: Copyright &copy; 2023 zLab
 
 markdown_extensions:
+  - abbr
+  - attr_list
   - admonition
+  - pymdownx.snippets
   - pymdownx.details
   - pymdownx.superfences:
       custom_fences:
