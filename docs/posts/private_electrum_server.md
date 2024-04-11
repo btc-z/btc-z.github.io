@@ -7,7 +7,7 @@ categories:
     - Bitcoin
 ---
 
-# Securing Your Bitcoin: Setting up a Private Electrum Server
+# How to secure your Bitcoin from active attackers: Electrum Server
 
 ![](../assets/electrum/bitcoin_vault.png)
 
