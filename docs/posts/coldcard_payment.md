@@ -1,3 +1,13 @@
+---
+draft: false
+date: 2024-10-26
+tags:
+    - Bitcoin
+    - Self-custody
+categories:
+    - Bitcoin
+---
+
 # 如何安全支付Bitcoin
 
 如何在使用冷钱包的情况下安全支付比特币
@@ -27,7 +37,7 @@
       ```
       gpg --verify ~/<签名的下载路径>/signatures.txt 
       ```
-      确保看到"Good signature from "Peter D. Gray <peter@coinkite.com>"的字样。
+      确保看到"Good signature from "Peter D. Gray peter@coinkite.com"的字样。
 4. 用MicroSD card把新的firmware `.dfu` 文件安装到coldcard上
 5. 更新后ColdCard会再次要求输入PINs，记得确认firmware的version。
 
