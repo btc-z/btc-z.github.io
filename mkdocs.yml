@@ -20,7 +20,7 @@ theme:
   font:
     text: Roboto Mono
   name: material
-  logo: assets/bitcoin.png
+  logo: assets/site_logo.png
   palette:
 
     # Palette toggle for light mode
