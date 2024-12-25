@@ -25,7 +25,7 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: blue grey
+      primary: lime
       scheme: default
       toggle:
         icon: material/brightness-7
@@ -33,7 +33,7 @@ theme:
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: blue grey
+      primary: lime
       scheme: slate
       toggle:
         icon: material/brightness-4
