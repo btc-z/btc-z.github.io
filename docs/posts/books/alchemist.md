@@ -26,7 +26,7 @@
 
 > Because a grain of sand is a moment of creation, and the universe has taken millions of years to create it.
 
-注：这让我不禁想到了《华严经》的 ”一尘中有尘数刹“，物因缘和合而生。一粒沙虽小，但与宇宙万物相互依存，缘起性空，它也即是宇宙。
+注：这让我不禁想到了《华严经》的 ”于一微尘中，悉见诸世界“，物因缘和合而生。一粒沙虽小，但与宇宙万物相互依存，缘起性空，它也即是宇宙。
 
 > "There is only one way to learn," the alchemist answered. "It's through action."
 
