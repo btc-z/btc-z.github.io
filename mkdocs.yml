@@ -20,7 +20,7 @@ theme:
   font:
     text: Roboto Mono
   name: material
-  logo: assets/infinity.png
+  logo: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlob2FtN29zamx5ZXQ3bnU2eG9weWFtMDRjaTMyN2xtbWhvM2FqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzmdjqH15YebLQ52/giphy.gif # assets/infinity.png
   palette:
 
     # Palette toggle for light mode
