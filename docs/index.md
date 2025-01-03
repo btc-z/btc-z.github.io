@@ -6,8 +6,9 @@
 
 ## :lab_coat:
 
-- **2024-02-09 :simple-bitcoin: [冷储存](posts/bitcoin/self_custody.md)**
+- **2025-01-02 :simple-bitcoin: [New COLDCARD Setup](posts/bitcoin/new_coldcard_setup.md)**
 - **2024-04-11 :simple-vault: [冷储存(高级版)](posts/bitcoin/private_electrum_server.md)**
+- **2024-02-09 :simple-bitcoin: [冷储存](posts/bitcoin/self_custody.md)**
 
 
 ### :books:
