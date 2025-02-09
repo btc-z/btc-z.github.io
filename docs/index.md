@@ -9,6 +9,7 @@
 
 ## :lab_coat:
 
+- **2025-02-08 :simple-bitcoin: [退休金还是比特币](posts/bitcoin/401k_or_btc.md)**
 - **2025-01-23 :simple-bitcoin: [无国界货币](posts/bitcoin/gentle_guide.md)**
 - **2025-01-02 :simple-bitcoin: [New COLDCARD Setup](posts/bitcoin/new_coldcard_setup.md)**
 - **2024-04-11 :simple-vault: [冷储存(高级版)](posts/bitcoin/private_electrum_server.md)**
