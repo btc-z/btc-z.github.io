@@ -1,4 +1,4 @@
 .PHONY: run test lint help
 
 serve:
-	mkdocs serve
+	poetry run mkdocs serve
