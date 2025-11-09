@@ -1,0 +1,15 @@
+{
+  "full_name": "Your Name",
+  "email": "your.email@example.com",
+  "github_username": "yourusername",
+  "project_name": "My Blog",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+  "site_name": "My Blog",
+  "site_description": "Personal blog and reflections",
+  "domain_name": "yourdomain.com",
+  "use_custom_domain": ["yes", "no"],
+  "use_analytics": ["no", "yes"],
+  "google_analytics_id": "G-XXXXXXXXXX",
+  "primary_color": ["lime", "indigo", "purple", "pink", "red", "orange", "amber", "teal", "cyan", "blue"],
+  "python_version": "3.13"
+}
