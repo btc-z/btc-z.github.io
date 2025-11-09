@@ -34,8 +34,6 @@ pipx install cookiecutter
 ### 2. Generate Your Blog
 
 ```bash
-cookiecutter https://github.com/YOUR-USERNAME/mkdocs-blog-template
-# Or if you have it locally:
 cookiecutter /path/to/mkdocs-blog-template
 ```
 
