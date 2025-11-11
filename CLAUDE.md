@@ -22,74 +22,44 @@ Deployment is fully automated via GitHub Actions. Pushing to `main` branch trigg
 
 ## Architecture
 
-### Multilingual Blog Structure
-The blog uses MkDocs Material with **dual blog plugin instances** for Chinese (default) and English versions. Chinese content is served at the root, with English content under `/en/`.
+### Blog Structure
+The blog uses MkDocs Material with the blog plugin. Posts are organized in a **category-based structure** under `docs/posts/`:
 
 ```
 docs/
-├── index.md              # Chinese homepage (default, 中文主页)
+├── index.md              # Homepage with curated post index
 ├── CNAME                 # Custom domain: zihan.us
-├── assets/               # Shared images and media
+├── assets/               # Images and media
 │   └── vipassana/
 ├── javascripts/          # Custom JavaScript
 │   └── mathjax.js       # Math rendering configuration
-├── posts/                # Chinese blog posts (default)
-│   ├── reflections/     # 生活感悟
-│   └── books/           # 读书笔记
-└── en/                   # English version
-    ├── index.md         # English homepage
-    └── posts/
-        ├── reflections/ # Life reflections & meditation
-        └── books/       # Book reviews and reading notes
+└── posts/                # Blog posts
+    ├── reflections/     # 生活感悟
+    └── books/           # 读书笔记
 ```
 
 ### Post Workflow
-
-**For new Chinese posts (default):**
 1. **Create post**: Add markdown file to `docs/posts/reflections/` or `docs/posts/books/`
 2. **Frontmatter**: Include YAML frontmatter with `draft`, `date`, and `categories`
 3. **Update homepage**: Manually add entry to `docs/index.md` with emoji, date, and link
-4. **Optional translation**: Create corresponding English version in `docs/en/posts/`
-5. **Preview**: Run `make serve` to test locally
-6. **Deploy**: Commit and push to `main` - GitHub Actions handles deployment
-
-**For new English posts:**
-- Same workflow, but use `docs/en/posts/` and update `docs/en/index.md`
-
-### Language Switcher
-- Homepage defaults to Chinese (`/`)
-- Language switcher in header allows toggling between 中文 and English
-- Configured via `extra.alternate` in mkdocs.yml:
-  - Chinese: `/` (default)
-  - English: `/en/`
+4. **Preview**: Run `make serve` to test locally
+5. **Deploy**: Commit and push to `main` - GitHub Actions handles deployment
 
 ### Post File Structure vs URL Format
-- **File structure**: Posts stored in language-specific category folders:
-  - Chinese (default): `docs/posts/reflections/post-name.md`
-  - English: `docs/en/posts/reflections/post-name.md`
-- **Generated URLs**: Blog plugin generates date-based URLs:
-  - Chinese: `/posts/2024/11/01/post-title`
-  - English: `/en/posts/2024/11/01/post-title`
-  - Based on the `date` field in frontmatter (configured via `post_url_date_format: yyyy/MM/dd` in mkdocs.yml)
+- **File structure**: Posts stored in category folders: `docs/posts/reflections/post-name.md` or `docs/posts/books/post-name.md`
+- **Generated URLs**: Blog plugin generates date-based URLs like `/posts/2024/11/01/post-title` based on the `date` field in frontmatter (configured via `post_url_date_format: yyyy/MM/dd` in mkdocs.yml)
 
 **Blog plugin documentation**: https://squidfunk.github.io/mkdocs-material/plugins/blog/
 
-### Blog Index Redirects
-- `docs/posts/index.md`: Auto-redirects to `index.md` (Chinese homepage)
-- `docs/en/posts/index.md`: Auto-redirects to `en/index.md` (English homepage)
+### Homepage vs Blog Index
+- `docs/index.md`: Manual homepage with curated post listings using emojis and dates
+- `docs/posts/index.md`: Auto-redirects to homepage (via redirects plugin)
 
 ## Key Configuration
 
 ### mkdocs.yml
-- **Blog plugin (dual instances)**:
-  - Chinese blog (default): `blog_dir: posts`, date-based URLs, archive disabled
-  - English blog: `blog_dir: en/posts`, date-based URLs, archive disabled
-- **Language switcher**: `extra.alternate` configures language switcher in header
-  - Chinese: `/` (default)
-  - English: `/en/`
-- **Redirects plugin**: Routes blog index pages to language homepages
-  - `posts/index.md` → `index.md` (Chinese homepage)
-  - `en/posts/index.md` → `en/index.md` (English homepage)
+- **Blog plugin**: Date-based URLs (`post_url_date_format: yyyy/MM/dd`), `blog_dir: posts`, archive disabled
+- **Redirects plugin**: Routes `posts/index.md` → `index.md`
 - **Git revision date plugin**: Shows "timeago" format timestamps (e.g., "2 days ago")
 - **Theme**: Material with Roboto Mono font, lime primary color, light/dark mode toggle
 - **Analytics**: Google Analytics enabled (G-X956BD08NG)
@@ -101,7 +71,7 @@ docs/
 - Dependencies: mkdocs-material, mkdocs-git-revision-date-localized-plugin, mkdocs-redirects, cookiecutter
 
 ### MathJax Configuration
-Math rendering is configured via `docs/javascripts/mathjax.js` (referenced in `mkdocs.yml` but file may not exist - MathJax is loaded from CDN)
+Math rendering is configured via `docs/javascripts/mathjax.js` and loaded from CDN (unpkg.com)
 
 ## Cookiecutter Template
 
@@ -110,17 +80,12 @@ The `mkdocs-blog-template/` directory contains a cookiecutter template for gener
 - `{{cookiecutter.project_slug}}/`: Template directory structure
 - Multiple documentation files (QUICKSTART.md, USAGE_GUIDE.md, etc.) explaining template usage
 
-## Multilingual Support
+## Language Support
 
-The blog has full multilingual support with Chinese as the default language and English as an alternative:
-- **Default language**: Chinese content at root (`/`)
-- **Alternative language**: English content at `/en/`
-- **Architecture**: Uses dual blog plugin instances for independent language sections
-- **Language switcher**: Header switcher allows toggling between 中文 and English
-- **Translations**: All posts are translated between languages:
-  - Chinese posts (default) in `docs/posts/`
-  - English posts in `docs/en/posts/`
-- **Navigation**: Each language has its own homepage, blog structure, and post organization
+The blog is primarily in Chinese with bilingual support for post content:
+- Posts can be written in Chinese, English, or a mix of both languages
+- No special configuration needed - UTF-8 natively supports both languages
+- Example: `docs/posts/reflections/理想的生活.md` (Chinese) and `docs/posts/books/alchemist.md` (mixed content)
 
 ## Custom Domain
 
