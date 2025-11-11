@@ -5,14 +5,9 @@ plugins:
       archive: false
       post_url_date_format: yyyy/MM/dd
       blog_dir: posts
-  - blog:
-      archive: false
-      post_url_date_format: yyyy/MM/dd
-      blog_dir: en/posts
   - redirects:
       redirect_maps:
         'posts/index.md': 'index.md'
-        'en/posts/index.md': 'en/index.md'
   - search
   - git-revision-date-localized:
       enable_creation_date: true
@@ -52,13 +47,6 @@ extra:
   analytics:
     provider: google
     property: G-X956BD08NG
-  alternate:
-    - name: English
-      link: /en/
-      lang: en
-    - name: 中文
-      link: /
-      lang: zh
 
 copyright: Copyright &copy; 2024 zLab
 
