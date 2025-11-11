@@ -5,9 +5,14 @@ plugins:
       archive: false
       post_url_date_format: yyyy/MM/dd
       blog_dir: posts
+  - blog:
+      archive: false
+      post_url_date_format: yyyy/MM/dd
+      blog_dir: en/posts
   - redirects:
       redirect_maps:
         'posts/index.md': 'index.md'
+        'en/posts/index.md': 'en/index.md'
   - search
   - git-revision-date-localized:
       enable_creation_date: true
@@ -20,7 +25,7 @@ theme:
   font:
     text: Roboto Mono
   name: material
-  logo: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlob2FtN29zamx5ZXQ3bnU2eG9weWFtMDRjaTMyN2xtbWhvM2FqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzmdjqH15YebLQ52/giphy.gif # assets/infinity.png
+  logo: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlob2FtN29zamx5ZXQ3bnU2eG9weWFtMDRjaTMyN2xtbWhvM2FqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzmdjqH15YebLQ52/giphy.gif
   palette:
 
     # Palette toggle for light mode
@@ -47,6 +52,13 @@ extra:
   analytics:
     provider: google
     property: G-X956BD08NG
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: 中文
+      link: /
+      lang: zh
 
 copyright: Copyright &copy; 2024 zLab
 
