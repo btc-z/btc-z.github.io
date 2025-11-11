@@ -5,6 +5,7 @@ plugins:
       archive: false
       post_url_date_format: yyyy/MM/dd
       blog_dir: posts
+      categories: true
   - redirects:
       redirect_maps:
         'posts/index.md': 'index.md'
@@ -17,8 +18,7 @@ theme:
   features:
     - content.tooltips
     - toc.follow
-  font:
-    text: Roboto Mono
+  font: false  # Disable default fonts to use custom fonts
   name: material
   logo: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlob2FtN29zamx5ZXQ3bnU2eG9weWFtMDRjaTMyN2xtbWhvM2FqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzmdjqH15YebLQ52/giphy.gif
   palette:
@@ -67,6 +67,9 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.arithmatex:
       generic: true
+
+extra_css:
+  - stylesheets/extra.css
 
 extra_javascript:
   - javascripts/mathjax.js
