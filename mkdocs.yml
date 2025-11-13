@@ -1,4 +1,4 @@
-site_name: ZLAB
+site_name: 七年
 
 plugins:
   - blog:
@@ -49,7 +49,7 @@ extra:
     provider: google
     property: G-X956BD08NG
 
-copyright: Copyright &copy; 2024 zLab
+copyright: Copyright &copy; 2025 七年
 
 markdown_extensions:
   - abbr
