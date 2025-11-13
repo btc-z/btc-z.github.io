@@ -1,4 +1,4 @@
-# :pencil2: 短期
+# :croissant: 短期
 
 Daily thoughts, tasks, and reflections.
 
