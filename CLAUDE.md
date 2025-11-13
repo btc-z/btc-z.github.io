@@ -80,3 +80,4 @@ Blog supports both Chinese and English content natively (UTF-8). No special conf
 
 Follow pattern: `type: description`
 - Examples: `post: 理想的生活`, `chore: update note`, `feat: add feature`
+- **NEVER include Claude Code credit/disclaimer** in commit messages

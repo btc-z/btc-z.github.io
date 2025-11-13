@@ -47,3 +47,10 @@ pre,
 .md-tabs__item:has(.md-tabs__link[href*="posts"]) {
   display: none !important;
 }
+
+/* Cream/sepia light mode background */
+[data-md-color-scheme="defaultmkd"] {
+  --md-default-bg-color: #f3ede3;        /* Even creamier with deeper warmth */
+  --md-code-bg-color: #e9e1d4;           /* Matching warm tan for code blocks */
+  --md-default-fg-color: #333333;        /* Dark gray text */
+}
