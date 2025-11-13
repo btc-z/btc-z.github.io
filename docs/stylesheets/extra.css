@@ -37,3 +37,13 @@ pre,
   font-family: "Lora", "Ma Shan Zheng", cursive;
   font-weight: 400;
 }
+
+/* Hide the Posts tab in navigation */
+.md-tabs__link[href*="posts"] {
+  display: none !important;
+}
+
+/* Also hide the parent list item */
+.md-tabs__item:has(.md-tabs__link[href*="posts"]) {
+  display: none !important;
+}

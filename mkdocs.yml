@@ -18,22 +18,23 @@ theme:
   features:
     - content.tooltips
     - toc.follow
+    - navigation.tabs
   font: false  # Disable default fonts to use custom fonts
   name: material
-  logo: https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGlob2FtN29zamx5ZXQ3bnU2eG9weWFtMDRjaTMyN2xtbWhvM2FqYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oFzmdjqH15YebLQ52/giphy.gif
+  logo: https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdTZycnNiempneTl5MHE1bzVscTNuYm44eGdkZHV5ZzU0YmxldXgyNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OmYIN0MhfeJhhPjEK7/giphy.gif
   palette:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: lime
-      scheme: default
+      primary: teal
+      scheme: defaultmkd
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
-      primary: lime
+      primary: light green
       scheme: slate
       toggle:
         icon: material/brightness-4
