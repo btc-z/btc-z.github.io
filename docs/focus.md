@@ -1,4 +1,4 @@
-# :pen_ballpoint: 长期
+# :jellyfish: 长期
 
 My medium-term focus areas and monthly themes.
 
