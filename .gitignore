@@ -399,3 +399,9 @@ FodyWeavers.xsd
 
 # local cache
 .DS_Store
+
+# Local-only blog content
+docs/短期.md
+docs/长期.md
+docs/posts/短期/
+docs/posts/长期/
