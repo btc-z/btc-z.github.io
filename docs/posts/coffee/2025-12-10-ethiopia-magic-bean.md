@@ -41,6 +41,6 @@ SWEETNESS (Dry vs. Candy-like)   ▕▓▓▓░░▏
 AFTERTASTE (Short vs. Lingering)  ▕▓▓▓░░▏
 ```
 
-> "uneven bed, most likely tunneled. need to dial up the grind size."
+> "uneven bed, most likely tunneled. need to dial up the grind size. need to experiment more."
 
 **Overall Rating:** 2/5
