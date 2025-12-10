@@ -137,6 +137,40 @@ body:
     validations:
       required: true
   - type: dropdown
+    id: sweetness
+    attributes:
+      label: Sweetness
+      options:
+        - 1 (Dry/Lackluster)
+        - 2
+        - 3
+        - 4
+        - 5 (Medium)
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10 (Candy-like)
+    validations:
+      required: true
+  - type: dropdown
+    id: aftertaste
+    attributes:
+      label: Aftertaste
+      options:
+        - 1 (Short/Unpleasant)
+        - 2
+        - 3
+        - 4
+        - 5 (Medium)
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10 (Long/Lingering)
+    validations:
+      required: true
+  - type: dropdown
     id: rating
     attributes:
       label: Overall Rating
