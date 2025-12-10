@@ -10,8 +10,9 @@ permissions:
 
 jobs:
   brew-log:
-    if: contains(github.event.issue.labels.*.name, 'coffee-log')
     runs-on: ubuntu-latest
+    # Trigger if title starts with "Brew Log" OR body contains the template header (fallback)
+    if: startsWith(github.event.issue.title, 'Brew Log')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
