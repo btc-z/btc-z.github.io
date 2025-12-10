@@ -66,6 +66,14 @@ body:
       value: "93"
     validations:
       required: true
+  - type: input
+    id: pour_interval
+    attributes:
+      label: Pour Interval (seconds)
+      description: Time between each pour (standard 4:6 method uses 45s)
+      value: "45"
+    validations:
+      required: false
 
   - type: markdown
     attributes:
