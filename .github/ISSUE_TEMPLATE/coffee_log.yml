@@ -1,0 +1,155 @@
+name: ☕ Coffee Journal Entry
+description: Log a new 4:6 Method brew.
+title: "[Brew]: <Bean Name>"
+labels: ["coffee-log"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🫘 The Beans
+  - type: input
+    id: bean_name
+    attributes:
+      label: Bean Name
+      placeholder: e.g. Ethiopia Guji Uraga
+    validations:
+      required: true
+  - type: input
+    id: roaster
+    attributes:
+      label: Roaster
+      placeholder: e.g. Onyx, Sey, La Cabra
+    validations:
+      required: true
+  - type: dropdown
+    id: roast_level
+    attributes:
+      label: Roast Level
+      options:
+        - Light
+        - Medium-Light
+        - Medium
+        - Medium-Dark
+        - Dark
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚗️ The Recipe (4:6 Method)
+  - type: input
+    id: grinder
+    attributes:
+      label: Grinder & Setting
+      placeholder: e.g. Comandante @ 24 clicks
+    validations:
+      required: true
+  - type: input
+    id: dose
+    attributes:
+      label: Dose (g)
+      placeholder: 20
+    validations:
+      required: true
+  - type: input
+    id: water
+    attributes:
+      label: Total Water (g)
+      placeholder: 300
+    validations:
+      required: true
+  - type: input
+    id: temp
+    attributes:
+      label: Water Temp (°C)
+      placeholder: 93
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚖️ Phase 1: Balance (First 40%)
+        Total for this phase is usually 40% of Total Water (e.g., 120g for 300g total).
+  - type: input
+    id: first_pour
+    attributes:
+      label: First Pour Amount (g)
+      description: Less than half = SWEETER. More than half = ACIDIC.
+      placeholder: 50
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 💪 Phase 2: Strength (Last 60%)
+        How many pours did you split the last 60% into?
+  - type: dropdown
+    id: strength_pours
+    attributes:
+      label: Strength Pours
+      options:
+        - 1 Pour (Light)
+        - 2 Pours (Medium)
+        - 3 Pours (Strong)
+      default: 1
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧪 Sensory Analysis
+  - type: dropdown
+    id: acidity
+    attributes:
+      label: Acidity / Brightness
+      options:
+        - 1 (Muted/Flat)
+        - 2
+        - 3
+        - 4
+        - 5 (Balanced)
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10 (Vibrant/Sharp)
+    validations:
+      required: true
+  - type: dropdown
+    id: body
+    attributes:
+      label: Body / Texture
+      options:
+        - 1 (Watery/Tea-like)
+        - 2
+        - 3
+        - 4
+        - 5 (Medium)
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10 (Syrupy/Heavy)
+    validations:
+      required: true
+  - type: dropdown
+    id: rating
+    attributes:
+      label: Overall Rating
+      options:
+        - ⭐
+        - ⭐⭐
+        - ⭐⭐⭐
+        - ⭐⭐⭐⭐
+        - ⭐⭐⭐⭐⭐
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Tasting Notes
+      placeholder: Jasmine, Bergamot, slight astringency at the end...

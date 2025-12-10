@@ -1,0 +1,41 @@
+name: Coffee Journal Robot
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  brew-log:
+    if: contains(github.event.issue.labels.*.name, 'coffee-log')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Process Issue
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          python scripts/process_coffee_log.py "$ISSUE_BODY"
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Coffee Bot"
+          git config --global user.email "bot@coffee.lab"
+          git add docs/posts/coffee/
+          git commit -m "feat(log): new coffee journal entry from #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close Issue
+        uses: peter-evans/close-issue@v3
+        with:
+          comment: "✅ Brew logged successfully! Your lab report is being built."
