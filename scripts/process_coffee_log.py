@@ -11,11 +11,16 @@ def parse_issue_body(body):
     
     for line in lines:
         line = line.strip()
+        # 1. New Field Key (### Label)
         if line.startswith('### '):
             if current_key:
                 data[current_key] = '\n'.join(current_value).strip()
             current_key = line[4:].strip()
             current_value = []
+        # 2. Ignore Section Headers (## Header) inserted by Template
+        elif line.startswith('## '):
+            continue
+        # 3. Capture Value
         else:
             if line:
                 current_value.append(line)
