@@ -29,18 +29,26 @@ def parse_issue_body(body):
         data[current_key] = '\n'.join(current_value).strip()
     return data
 
-def generate_terminal_slider(label, value_1_to_10, left_label, right_label):
+def generate_terminal_slider(label, value_1_to_5, left_label, right_label):
     """
     Generates a high-density unicode slider with inline labels.
-    ACIDITY (Muted vs. Vibrant) ▕▓▓▓▓▓▓░░░░▏
+    Input is 1-5.
+    Output bar has 10 segments.
     """
     # Normalize value
-    if value_1_to_10 < 1: value_1_to_10 = 1
-    if value_1_to_10 > 10: value_1_to_10 = 10
+    if value_1_to_5 < 1: value_1_to_5 = 1
+    if value_1_to_5 > 5: value_1_to_5 = 5
     
-    # Bar representation (10 segments)
-    filled = '▓' * value_1_to_10
-    empty = '░' * (10 - value_1_to_10)
+    # Map 1-5 to 1-10 segments
+    # 1 -> 2 segments
+    # 2 -> 4 segments
+    # 3 -> 6 segments
+    # 4 -> 8 segments
+    # 5 -> 10 segments
+    num_filled = value_1_to_5 * 2
+    
+    filled = '▓' * num_filled
+    empty = '░' * (10 - num_filled)
     
     # Combine label with descriptive text
     full_label = f"{label} ({left_label} vs. {right_label})"
@@ -139,8 +147,8 @@ def generate_markdown(data):
 
     # Sensory Sliders
     def parse_score(key):
-        try: return int(data.get(key, '5').split()[0])
-        except: return 5
+        try: return int(data.get(key, '3').split()[0])
+        except: return 3
 
     acidity = parse_score('Acidity / Brightness')
     body = parse_score('Body / Texture')
@@ -187,6 +195,8 @@ tags:
 ## Analysis
 
 {sensory_block}
+
+> "{data.get('Tasting Notes', 'No notes provided.')}"
 
 **Overall Rating:** {numerical_rating}
 """
