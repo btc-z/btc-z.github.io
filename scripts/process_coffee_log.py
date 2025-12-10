@@ -33,22 +33,17 @@ def generate_terminal_slider(label, value_1_to_5, left_label, right_label):
     """
     Generates a high-density unicode slider with inline labels.
     Input is 1-5.
-    Output bar has 10 segments.
+    Output bar has 5 segments.
     """
     # Normalize value
     if value_1_to_5 < 1: value_1_to_5 = 1
     if value_1_to_5 > 5: value_1_to_5 = 5
     
-    # Map 1-5 to 1-10 segments
-    # 1 -> 2 segments
-    # 2 -> 4 segments
-    # 3 -> 6 segments
-    # 4 -> 8 segments
-    # 5 -> 10 segments
-    num_filled = value_1_to_5 * 2
+    # Map 1-5 directly to 5 segments
+    num_filled = value_1_to_5
     
     filled = '▓' * num_filled
-    empty = '░' * (10 - num_filled)
+    empty = '░' * (5 - num_filled)
     
     # Combine label with descriptive text
     full_label = f"{label} ({left_label} vs. {right_label})"
