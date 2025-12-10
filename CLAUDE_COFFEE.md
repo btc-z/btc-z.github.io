@@ -28,7 +28,10 @@ Structured form capturing:
 2. Set up Python 3.13.1
 3. Run `process_coffee_log.py` with issue body (exits on error)
 4. Commit generated markdown to `docs/posts/coffee/` (skips if no changes)
-5. Close issue with success message
+5. Deploy site to GitHub Pages (runs mkdocs gh-deploy)
+6. Close issue with success message
+
+**Note:** The workflow deploys the site directly instead of relying on the main cicd.yml workflow, because GitHub Actions commits don't trigger other workflows by default (security feature to prevent infinite loops).
 
 **Note:** Template auto-sets title to "Brew Log" + adds `coffee-log` label for organization
 
@@ -141,6 +144,21 @@ Missing fields will cause the workflow to fail with an error message.
 
 Change `MAX_SLIDER_VALUE` and update template dropdowns to match
 
+## Workflow Architecture Notes
+
+### Why Deploy in Coffee Workflow?
+
+The coffee journal workflow deploys the site directly instead of triggering `cicd.yml`. This is because:
+
+**GitHub Security Feature:** Commits made using `GITHUB_TOKEN` don't trigger other workflows (prevents infinite loops).
+
+**Alternative approaches:**
+1. **Current (recommended):** Deploy directly in coffee_journal.yml
+2. **Use PAT:** Create a Personal Access Token and use it for the commit (triggers cicd.yml)
+3. **workflow_run trigger:** Make cicd.yml listen to coffee_journal.yml completion
+
+We chose option 1 for simplicity - no secrets needed, no additional triggers.
+
 ## Known Issues
 
 None currently! All previous issues have been resolved:
@@ -149,6 +167,7 @@ None currently! All previous issues have been resolved:
 - ✅ Empty commit prevention (checks for changes before committing)
 - ✅ Bot email uses verified github-actions[bot] identity
 - ✅ Roast level is displayed in recipe abstract
+- ✅ Site deployment integrated into coffee workflow
 
 ## Future Enhancements
 

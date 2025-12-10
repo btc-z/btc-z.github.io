@@ -7,6 +7,8 @@ on:
 permissions:
   contents: write
   issues: write
+  pages: write
+  id-token: write
 
 jobs:
   brew-log:
@@ -40,7 +42,14 @@ jobs:
           git commit -m "feat(log): new coffee journal entry from #${{ github.event.issue.number }}"
           git push
 
+      - name: Deploy Site
+        run: |
+          pip install mkdocs-material
+          pip install mkdocs-git-revision-date-localized-plugin
+          pip install mkdocs-redirects
+          mkdocs gh-deploy --force
+
       - name: Close Issue
         uses: peter-evans/close-issue@v3
         with:
-          comment: "✅ Brew logged successfully! Your lab report is being built."
+          comment: "✅ Brew logged and deployed! Check your site in a few minutes."
