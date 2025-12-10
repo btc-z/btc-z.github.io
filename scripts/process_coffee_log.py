@@ -174,6 +174,7 @@ tags:
 
 !!! abstract "The 4:6 Recipe" 
     **Bean:** {bean}
+    **Roast:** {data.get('Roast Level', 'N/A')}
     **Target:** {balance_text} & {strength_text}
 
     *   **Ratio:** 1:{ratio} ({dose}g In / {water}g Out)
