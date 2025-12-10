@@ -67,10 +67,13 @@ def generate_terminal_timeline(first, second, strength_count, strength_amt):
         m, s = divmod(total_sec, 60)
         times.append(f"{m}:{s:02d}")
     
-    # Generate time row: each time string is centered over a 7-char width
+    # Generate time row: Left align to match start of segments
+    # Each segment is 6 chars + 1 separator = 7 chars total width per block
+    # We want the time string to start at the tick.
     time_row_parts = []
     for i, t in enumerate(times):
-        time_row_parts.append(f"{t:^7}") # Center over 7 chars
+        # Left align in 7-char field
+        time_row_parts.append(f"{t:<7}") 
     time_row = "".join(time_row_parts)
 
     segment = "──────" # 6 chars
