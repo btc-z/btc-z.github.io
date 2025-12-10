@@ -70,15 +70,6 @@ A pour-over technique by Tetsu Kasuya:
 ## Generated Post Structure
 
 ```markdown
----
-date: 2025-12-09
-categories:
-  - coffee
-tags:
-  - {roaster}
-  - 4-6-method
----
-
 # {date}
 
 !!! abstract "The 4:6 Recipe"
@@ -111,11 +102,19 @@ BODY (Watery vs. Syrupy)        ▕▓▓▓▓░▏
 ### Constants (scripts/process_coffee_log.py)
 
 ```python
+TIMEZONE_OFFSET = -5         # Your timezone (EST = UTC-5, EDT = UTC-4)
 POUR_INTERVAL_SECONDS = 45   # Time between pours
 PHASE1_RATIO = 0.4           # 40% for balance
 PHASE2_RATIO = 0.6           # 60% for strength
 MAX_SLIDER_VALUE = 5         # 1-5 scale for sensory
 ```
+
+**Important:** GitHub Actions runs in UTC. Set `TIMEZONE_OFFSET` to match your timezone:
+- EST: `-5`
+- EDT: `-4`
+- PST: `-8`
+- GMT: `0`
+- JST: `+9`
 
 ### Required Fields
 

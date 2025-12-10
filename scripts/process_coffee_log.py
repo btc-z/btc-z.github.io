@@ -1,8 +1,10 @@
 import os
 import sys
 import datetime
+from datetime import timezone, timedelta
 
 # Constants
+TIMEZONE_OFFSET = -5  # EST (UTC-5), change to -4 for EDT or your timezone
 POUR_INTERVAL_SECONDS = 45
 PHASE1_RATIO = 0.4
 PHASE2_RATIO = 0.6
@@ -130,11 +132,11 @@ def generate_terminal_slider(label, value_1_to_5, left_label, right_label):
     # Combine label with descriptive text
     full_label = f"{label} ({left_label} vs. {right_label})"
 
-    # Max label width for padding purposes
-    max_label_display_width = 32
+    # Max label width - should be >= longest label (AFTERTASTE = 32 chars)
+    max_label_display_width = 36
 
-    # Ensure a minimum space after label before the bar
-    padding_needed = max(1, max_label_display_width - len(full_label))
+    # Ensure consistent padding for alignment
+    padding_needed = max_label_display_width - len(full_label)
 
     return f"{full_label}{' ' * padding_needed} ▕{filled}{empty}▏"
 
@@ -157,8 +159,12 @@ def generate_terminal_timeline(first, second, strength_count, strength_amt, inte
     # We want the time string to start at the tick.
     time_row_parts = []
     for i, t in enumerate(times):
-        # Left align in 7-char field
-        time_row_parts.append(f"{t:<7}") 
+        if i < len(times) - 1:
+            # Left align in 7-char field for all but last time
+            time_row_parts.append(f"{t:<7}")
+        else:
+            # Last time: no padding to avoid excessive overhang
+            time_row_parts.append(t)
     time_row = "".join(time_row_parts)
 
     segment = "──────" # 6 chars
@@ -171,7 +177,9 @@ def generate_terminal_timeline(first, second, strength_count, strength_amt, inte
 
     vol_row = ""
     for p in pours:
-        vol_row += f"│ {int(p):^4}g "
+        # Format as "Xg" then center in 6-char cell
+        vol_str = f"{int(p)}g"
+        vol_row += f"│{vol_str:^6}"
     vol_row += "│"
     
     bottom_row = "└" + "┴".join([segment] * len(pours)) + "┘"
@@ -180,7 +188,9 @@ def generate_terminal_timeline(first, second, strength_count, strength_amt, inte
 
 def generate_markdown(data):
     """Generate MkDocs-compatible markdown from parsed issue data."""
-    today = datetime.date.today().strftime('%Y-%m-%d')
+    # Get current time in specified timezone
+    tz = timezone(timedelta(hours=TIMEZONE_OFFSET))
+    today = datetime.datetime.now(tz).strftime('%Y-%m-%d')
     bean = data.get(FIELD_BEAN_NAME, 'Unknown Bean')
     roaster = data.get(FIELD_ROASTER, 'Unknown Roaster')
 
@@ -222,17 +232,7 @@ def generate_markdown(data):
     # Rating is passed as "5/5" from the form
     numerical_rating = data.get(FIELD_RATING, '3/5').strip()
 
-    md_content = f"""
----
-date: {today}
-categories:
-  - coffee
-tags:
-  - {roaster}
-  - 4-6-method
----
-
-# {today}
+    md_content = f"""# {today}
 
 !!! abstract "The 4:6 Recipe"
     **Bean:** {bean}
@@ -277,7 +277,9 @@ def main():
 
     content, bean_name = generate_markdown(data)
 
-    today = datetime.date.today().strftime('%Y-%m-%d')
+    # Use same timezone as in generate_markdown for consistency
+    tz = timezone(timedelta(hours=TIMEZONE_OFFSET))
+    today = datetime.datetime.now(tz).strftime('%Y-%m-%d')
     safe_name = "".join([c for c in bean_name if c.isalnum() or c in (' ', '-', '_')]).rstrip()
     safe_name = safe_name.replace(' ', '-').lower()
     filename = f"docs/posts/coffee/{today}-{safe_name}.md"
