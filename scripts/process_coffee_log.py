@@ -151,9 +151,8 @@ def generate_markdown(data):
     sensory_block += generate_terminal_slider("AFTERTASTE", aftertaste, "Short", "Lingering") + "\n"
     sensory_block += "```"
     
-    # Convert star rating to numerical
-    rating_raw = data.get('Overall Rating', '⭐⭐⭐').strip()
-    numerical_rating = f"{rating_raw.count('⭐')}/5"
+    # Rating is passed as "5/5" from the form now
+    numerical_rating = data.get('Overall Rating', '3/5').strip()
 
     md_content = f"""
 ---
