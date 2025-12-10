@@ -1,22 +1,22 @@
-/* Import Ma Shan Zheng (马善政) for Chinese */
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+/* Import ZCOOL XiaoWei (站酷小薇) for Chinese */
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap');
 
-/* Import Lora for English */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* Import EB Garamond for English */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 /* Import Fira Code for code blocks */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 /* Set font stack for body text */
 :root {
-  --md-text-font: "Lora", "Ma Shan Zheng", cursive;
+  --md-text-font: "EB Garamond", "Long Cang", serif;
   --md-code-font: "Fira Code", monospace;
 }
 
 /* Apply fonts to all text content */
 body,
 .md-typeset {
-  font-family: "Lora", "Ma Shan Zheng", cursive;
+  font-family: "Lora", "ZCOOL XiaoWei", cursive;
 }
 
 /* Code blocks use monospace */
@@ -34,7 +34,7 @@ pre,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  font-family: "Lora", "Ma Shan Zheng", cursive;
+  font-family: "Lora", "ZCOOL XiaoWei", cursive;
   font-weight: 400;
 }
 
