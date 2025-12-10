@@ -1,4 +1,4 @@
-name: ☕ Coffee Journal Entry
+name: Coffee Journal Entry
 description: Log a new 4:6 Method brew.
 title: "[Brew]: <Bean Name>"
 labels: ["coffee-log"]
