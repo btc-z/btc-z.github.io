@@ -14,6 +14,6 @@
 - **2025-11-19 :brain: [查理芒格](posts/书/查理芒格.md)**
 - **2024-12-24 :material-wizard-hat: [牧羊少年奇幻之旅 作者：保罗·柯艾略](posts/书/alchemist.md)**
 
-### :test_tube: Coffee Lab
+### :coffee: 咖啡
 
-- **2025-12-09 :coffee: [The 4:6 Method Guide](posts/coffee/4-6-method.md)**
+- **2025-12-09 :coffee: [The 4:6 Method Guide](posts/咖啡/4-6-method.md)**
