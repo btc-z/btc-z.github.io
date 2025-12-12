@@ -1,16 +1,12 @@
 # 2025-12-12
 
 !!! abstract "The 4:6 Recipe"
-    **Bean:** Southern weather
-    **Roast:** Light
-    **Target:** SWEETER & MEDIUM
-
+    *   **Bean:** Southern weather
+    *   **Roast:** Light
     *   **Ratio:** 1:15.0 (20.0g In / 300.0g Out)
     *   **Grinder:** 32
     *   **Temp:** 93°C
-
-    **Phase 1 (Balance):** 55g ➔ 65g
-    **Phase 2 (Strength):** 2 x 90g
+    *   **Phase 1 (Balance):** 55g ➔ 65g | **Phase 2 (Strength):** 2 x 90g
 
 ## Timeline
 
@@ -28,4 +24,4 @@
 
 **Total Score:** 64/90
 
-> "用点滴最后90g的水，惊艳的是对比geometry这个的确要好喝些。虽然after taste有微弱的苦涩味。"
+> "用点滴最后90g的水，惊艳的是对比geometry这个的确要好喝些。虽然after taste有微弱的苦涩味"
