@@ -25,6 +25,14 @@ make serve             # Start dev server at http://127.0.0.1:8000/
 
 **Deployment**: Automated via GitHub Actions. Push to `main` triggers deployment to GitHub Pages.
 
+### CI/CD Workflows
+
+**`.github/workflows/`**:
+- `cicd.yml`: Main deployment workflow (triggers on push to main with path filters)
+- `coffee_journal.yml`: Automated coffee logging from GitHub issues
+
+**Important**: The `github-actions[bot]` push from `coffee_journal.yml` won't trigger `cicd.yml` because GitHub Actions doesn't trigger workflows from commits made by the default `GITHUB_TOKEN` (prevents recursive triggers). This is intentional - not duplicate deployment. The coffee journal workflow includes its own deployment step.
+
 ## Blog Structure
 
 Posts are organized in **category-based folders** under `docs/posts/`:
