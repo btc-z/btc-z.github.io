@@ -24,6 +24,15 @@ jobs:
         with:
           python-version: '3.13.1'
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libglib2.0-0 libnss3 libgconf-2-4 libfontconfig1
+
+      - name: Install Python dependencies
+        run: |
+          pip install plotly==5.24.1 kaleido==0.2.1
+
       - name: Process Issue
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
@@ -34,7 +43,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/posts/coffee/
+          git add docs/posts/咖啡/ docs/assets/coffee/
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
