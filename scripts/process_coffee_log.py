@@ -2,6 +2,7 @@ import os
 import sys
 import datetime
 from datetime import timezone, timedelta
+import plotly.graph_objects as go
 
 # Constants
 TIMEZONE_OFFSET = -5  # EST (UTC-5), change to -4 for EDT or your timezone
@@ -117,18 +118,82 @@ def calculate_strength_profile(pour_count):
     return strength_map.get(pour_count, "STRONG")
 
 
-def generate_sensory_block(data):
-    """Generate sensory analysis sliders from issue data and calculate total score."""
-    sliders = []
-    total_score = 0
+def generate_radar_plot(scores, labels, output_path):
+    """
+    Generate a radar/spider plot for SCA sensory evaluation using Plotly.
+
+    Args:
+        scores: List of scores (1-10) for each attribute
+        labels: List of attribute labels
+        output_path: Path to save the plot image
+    """
+    # Create the radar chart
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatterpolar(
+        r=scores,
+        theta=labels,
+        fill='toself',
+        fillcolor='rgba(99, 110, 250, 0.3)',  # Semi-transparent fill
+        line=dict(color='rgb(99, 110, 250)', width=3),
+        marker=dict(size=8, color='rgb(99, 110, 250)'),
+        name='Score',
+        hovertemplate='<b>%{theta}</b><br>Score: %{r}/10<extra></extra>'
+    ))
+
+    # Update layout for better appearance
+    fig.update_layout(
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 10],
+                tickvals=[2, 4, 6, 8, 10],
+                tickfont=dict(size=12, color='white', family='Garamond, serif'),
+                gridcolor='rgba(255, 255, 255, 0.3)',
+            ),
+            angularaxis=dict(
+                tickfont=dict(size=13, color='white', family='Garamond, serif'),
+                rotation=90,
+                direction='clockwise',
+                gridcolor='rgba(255, 255, 255, 0.3)',
+            ),
+            bgcolor='rgba(0, 0, 0, 0)',  # Transparent background
+        ),
+        showlegend=False,
+        title=dict(
+            text='SCA Sensory Evaluation',
+            font=dict(size=18, color='white', family='Garamond, serif'),
+            x=0.5,
+            xanchor='center',
+            y=0.95,
+        ),
+        paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent paper background
+        plot_bgcolor='rgba(0, 0, 0, 0)',   # Transparent plot background
+        margin=dict(l=80, r=80, t=100, b=80),
+        width=800,
+        height=800,
+    )
+
+    # Save as static image
+    fig.write_image(output_path, format='png', scale=2)
+
+
+def generate_sensory_block(data, image_path):
+    """Generate sensory analysis radar plot from issue data and calculate total score."""
+    scores = []
+    labels = []
 
     for label, field_name, left_desc, right_desc in SENSORY_ATTRIBUTES:
         value = int(parse_numeric_field(data, field_name, '5'))
-        total_score += value
-        slider = generate_terminal_slider(label, value, left_desc, right_desc)
-        sliders.append(slider)
+        scores.append(value)
+        labels.append(label)
 
-    return "```text\n" + "\n".join(sliders) + "\n```", total_score
+    total_score = sum(scores)
+
+    # Generate radar plot
+    generate_radar_plot(scores, labels, image_path)
+
+    return total_score
 
 
 def generate_terminal_slider(label, value, left_label, right_label):
@@ -201,13 +266,23 @@ def generate_terminal_timeline(first, second, strength_count, strength_amt, inte
     
     return f"```text\n{time_row}\n{bar_row}\n{label_row}\n{vol_row}\n{bottom_row}\n```"
 
-def generate_markdown(data):
+def generate_markdown(data, bean_name_for_filename):
     """Generate MkDocs-compatible markdown from parsed issue data."""
     # Get current time in specified timezone
     tz = timezone(timedelta(hours=TIMEZONE_OFFSET))
     today = datetime.datetime.now(tz).strftime('%Y-%m-%d')
     bean = data.get(FIELD_BEAN_NAME, 'Unknown Bean')
     roaster = data.get(FIELD_ROASTER, 'Unknown Roaster')
+
+    # Create image filename and path
+    safe_bean_name = "".join([c for c in bean_name_for_filename if c.isalnum() or c in (' ', '-', '_')]).rstrip()
+    safe_bean_name = safe_bean_name.replace(' ', '-').lower()
+    image_filename = f"{today}-{safe_bean_name}-radar.png"
+    image_path = f"docs/assets/coffee/{image_filename}"
+    image_rel_path = f"../../assets/coffee/{image_filename}"  # Relative path for markdown
+
+    # Ensure assets directory exists
+    os.makedirs('docs/assets/coffee', exist_ok=True)
 
     # --- Numeric Parsing ---
     try:
@@ -241,8 +316,8 @@ def generate_markdown(data):
     pour_interval = int(parse_numeric_field(data, FIELD_POUR_INTERVAL, str(POUR_INTERVAL_SECONDS)))
     timeline_block = generate_terminal_timeline(first_pour, second_pour, strength_pours_count, strength_pour_amount, pour_interval)
 
-    # Sensory Sliders (1-10 scale) and Score Calculation
-    sensory_block, total_score = generate_sensory_block(data)
+    # Sensory Radar Plot (1-10 scale) and Score Calculation
+    total_score = generate_sensory_block(data, image_path)
 
     md_content = f"""# {today}
 
@@ -264,7 +339,7 @@ def generate_markdown(data):
 
 ## Evaluation
 
-{sensory_block}
+![SCA Sensory Evaluation]({image_rel_path})
 
 **Total Score:** {total_score}/{MAX_SCORE}
 
@@ -287,7 +362,9 @@ def main():
         print(f"Error: Missing required fields: {', '.join(missing)}", file=sys.stderr)
         sys.exit(1)
 
-    content, bean_name = generate_markdown(data)
+    # Get bean name for filename generation
+    bean_name = data.get(FIELD_BEAN_NAME, 'Unknown Bean')
+    content, _ = generate_markdown(data, bean_name)
 
     # Use same timezone as in generate_markdown for consistency
     tz = timezone(timedelta(hours=TIMEZONE_OFFSET))
