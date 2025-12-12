@@ -3,7 +3,7 @@
 !!! abstract "The 4:6 Recipe"
     *   **Bean:** Southern weather
     *   **Roast:** Light
-    *   **Ratio:** 1:15.0 (20.0g In / 300.0g Out)
+    *   **Ratio:** 1:15.0 (20g In / 300g Out)
     *   **Grinder:** 32
     *   **Temp:** 93°C
     *   **Phase 1 (Balance):** 55g ➔ 65g | **Phase 2 (Strength):** 2 x 90g
