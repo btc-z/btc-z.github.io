@@ -2,7 +2,7 @@ name: Coffee Journal Robot
 
 on:
   issues:
-    types: [opened, edited]
+    types: [opened, edited, reopened]
 
 permissions:
   contents: write
