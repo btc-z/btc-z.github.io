@@ -11,7 +11,8 @@ PHASE2_RATIO = 0.6
 DEFAULT_DOSE = 20
 DEFAULT_WATER = 300
 DEFAULT_RATIO = 15.0
-MAX_SLIDER_VALUE = 5
+MAX_SLIDER_VALUE = 10
+MAX_SCORE = 90  # 9 SCA criteria × 10 points each
 
 # Field names (must match GitHub Issue template labels exactly)
 FIELD_BEAN_NAME = 'Bean Name'
@@ -24,19 +25,30 @@ FIELD_GRINDER = 'Grinder & Setting'
 FIELD_FIRST_POUR = 'First Pour Amount (g)'
 FIELD_STRENGTH_POURS = 'Strength Pours'
 FIELD_POUR_INTERVAL = 'Pour Interval (seconds)'
-FIELD_ACIDITY = 'Acidity / Brightness'
-FIELD_BODY = 'Body / Texture'
-FIELD_SWEETNESS = 'Sweetness'
-FIELD_AFTERTASTE = 'Aftertaste'
-FIELD_RATING = 'Overall Rating'
+# SCA Sensory Evaluation (1-10 scale)
+FIELD_AROMA = 'Aroma (香气)'
+FIELD_FLAVOR = 'Flavor (风味)'
+FIELD_AFTERTASTE = 'Aftertaste (余韵)'
+FIELD_ACIDITY = 'Acidity (酸质)'
+FIELD_BODY = 'Body (醇厚度)'
+FIELD_BALANCE = 'Balance (平衡度)'
+FIELD_CLEAN_CUP = 'Clean Cup (干净度)'
+FIELD_SWEETNESS = 'Sweetness (甜度)'
+FIELD_OVERALL = 'Overall (总体评价)'
 FIELD_NOTES = 'Tasting Notes'
 
-# Sensory attributes configuration: (display_label, field_name, min_descriptor, max_descriptor)
+# SCA Sensory attributes configuration: (display_label, field_name, min_descriptor, max_descriptor)
+# Scale: 1-10 for each attribute, max total score = 90
 SENSORY_ATTRIBUTES = [
-    ('ACIDITY', FIELD_ACIDITY, 'Muted', 'Vibrant'),
-    ('BODY', FIELD_BODY, 'Watery', 'Syrupy'),
-    ('SWEETNESS', FIELD_SWEETNESS, 'Dry', 'Candy-like'),
+    ('AROMA', FIELD_AROMA, 'Weak', 'Complex'),
+    ('FLAVOR', FIELD_FLAVOR, 'Simple', 'Excellent'),
     ('AFTERTASTE', FIELD_AFTERTASTE, 'Short', 'Lingering'),
+    ('ACIDITY', FIELD_ACIDITY, 'Flat', 'Bright'),
+    ('BODY', FIELD_BODY, 'Light', 'Syrupy'),
+    ('BALANCE', FIELD_BALANCE, 'Uneven', 'Harmonious'),
+    ('CLEAN CUP', FIELD_CLEAN_CUP, 'Defects', 'Clean'),
+    ('SWEETNESS', FIELD_SWEETNESS, 'Dry', 'Sweet'),
+    ('OVERALL', FIELD_OVERALL, 'Poor', 'Outstanding'),
 ]
 
 def parse_numeric_field(data, key, default='0'):
@@ -106,28 +118,31 @@ def calculate_strength_profile(pour_count):
 
 
 def generate_sensory_block(data):
-    """Generate sensory analysis sliders from issue data."""
+    """Generate sensory analysis sliders from issue data and calculate total score."""
     sliders = []
+    total_score = 0
+
     for label, field_name, left_desc, right_desc in SENSORY_ATTRIBUTES:
-        value = int(parse_numeric_field(data, field_name, '3'))
+        value = int(parse_numeric_field(data, field_name, '5'))
+        total_score += value
         slider = generate_terminal_slider(label, value, left_desc, right_desc)
         sliders.append(slider)
 
-    return "```text\n" + "\n".join(sliders) + "\n```"
+    return "```text\n" + "\n".join(sliders) + "\n```", total_score
 
 
-def generate_terminal_slider(label, value_1_to_5, left_label, right_label):
+def generate_terminal_slider(label, value, left_label, right_label):
     """
     Generates a high-density unicode slider with inline labels.
-    Input is 1-5 (matches GitHub Issue template dropdowns).
-    Output bar has 5 segments.
-    Example: ACIDITY (Muted vs. Vibrant) ▕▓▓▓░░▏
+    Input is 1-10 (matches GitHub Issue template dropdowns).
+    Output bar has 10 segments.
+    Example: AROMA (Weak vs. Complex) ▕▓▓▓▓▓▓▓░░░▏
     """
-    # Normalize value to 1-5 range
-    value_1_to_5 = max(1, min(MAX_SLIDER_VALUE, value_1_to_5))
+    # Normalize value to 1-10 range
+    value = max(1, min(MAX_SLIDER_VALUE, value))
 
-    filled = '▓' * value_1_to_5
-    empty = '░' * (MAX_SLIDER_VALUE - value_1_to_5)
+    filled = '▓' * value
+    empty = '░' * (MAX_SLIDER_VALUE - value)
 
     # Combine label with descriptive text
     full_label = f"{label} ({left_label} vs. {right_label})"
@@ -226,11 +241,8 @@ def generate_markdown(data):
     pour_interval = int(parse_numeric_field(data, FIELD_POUR_INTERVAL, str(POUR_INTERVAL_SECONDS)))
     timeline_block = generate_terminal_timeline(first_pour, second_pour, strength_pours_count, strength_pour_amount, pour_interval)
 
-    # Sensory Sliders (1-5 scale)
-    sensory_block = generate_sensory_block(data)
-
-    # Rating is passed as "5/5" from the form
-    numerical_rating = data.get(FIELD_RATING, '3/5').strip()
+    # Sensory Sliders (1-10 scale) and Score Calculation
+    sensory_block, total_score = generate_sensory_block(data)
 
     md_content = f"""# {today}
 
@@ -250,13 +262,13 @@ def generate_markdown(data):
 
 {timeline_block}
 
-## Analysis
+## Evaluation
 
 {sensory_block}
 
-> "{data.get(FIELD_NOTES, 'No notes provided.')}"
+**Total Score:** {total_score}/{MAX_SCORE}
 
-**Overall Rating:** {numerical_rating}
+> "{data.get(FIELD_NOTES, 'No notes provided.')}"
 """
     return md_content, bean
 
@@ -282,9 +294,9 @@ def main():
     today = datetime.datetime.now(tz).strftime('%Y-%m-%d')
     safe_name = "".join([c for c in bean_name if c.isalnum() or c in (' ', '-', '_')]).rstrip()
     safe_name = safe_name.replace(' ', '-').lower()
-    filename = f"docs/posts/coffee/{today}-{safe_name}.md"
+    filename = f"docs/posts/咖啡/{today}-{safe_name}.md"
 
-    os.makedirs('docs/posts/coffee', exist_ok=True)
+    os.makedirs('docs/posts/咖啡', exist_ok=True)
 
     # Warn if overwriting existing file
     if os.path.exists(filename):

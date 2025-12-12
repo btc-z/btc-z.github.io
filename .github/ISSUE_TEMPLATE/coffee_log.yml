@@ -14,11 +14,15 @@ body:
       placeholder: e.g. Ethiopia Guji Uraga
     validations:
       required: true
-  - type: input
+  - type: dropdown
     id: roaster
     attributes:
       label: Roaster
-      placeholder: e.g. Onyx, Sey, La Cabra
+      options:
+        - Onyx
+        - Sey
+        - La Cabra
+        - Devocion
     validations:
       required: true
   - type: dropdown
@@ -109,70 +113,176 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Analysis
+        ## SCA Sensory Evaluation (1-10 scale, max 90 points)
   - type: dropdown
-    id: acidity
+    id: aroma
     attributes:
-      label: Acidity / Brightness
+      label: Aroma (香气)
+      description: Dry and wet fragrance; first impression of potential flavor and complexity
       options:
-        - 1 (Muted/Flat)
-        - 2
-        - 3 (Balanced)
-        - 4
-        - 5 (Vibrant/Sharp)
-      default: 2 # Index 2 corresponds to option "3 (Balanced)"
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
     validations:
       required: true
   - type: dropdown
-    id: body
+    id: flavor
     attributes:
-      label: Body / Texture
+      label: Flavor (风味)
+      description: Primary taste characteristics; combined impression of taste and retronasal aroma
       options:
-        - 1 (Watery/Tea-like)
-        - 2
-        - 3 (Medium)
-        - 4
-        - 5 (Syrupy/Heavy)
-      default: 2
-    validations:
-      required: true
-  - type: dropdown
-    id: sweetness
-    attributes:
-      label: Sweetness
-      options:
-        - 1 (Dry/Lackluster)
-        - 2
-        - 3 (Medium)
-        - 4
-        - 5 (Candy-like)
-      default: 2
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
     validations:
       required: true
   - type: dropdown
     id: aftertaste
     attributes:
-      label: Aftertaste
+      label: Aftertaste (余韵)
+      description: Length and pleasantness of flavor after swallowing; positive finish should be clean and sweet
       options:
-        - 1 (Short/Unpleasant)
-        - 2
-        - 3 (Medium)
-        - 4
-        - 5 (Long/Lingering)
-      default: 2
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
     validations:
       required: true
   - type: dropdown
-    id: rating
+    id: acidity
     attributes:
-      label: Overall Rating
+      label: Acidity (酸质)
+      description: Liveliness or brightness; high-quality acidity should be crisp and sweet
       options:
-        - 1/5
-        - 2/5
-        - 3/5
-        - 4/5
-        - 5/5
-      default: 2
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: body
+    attributes:
+      label: Body (醇厚度)
+      description: Physical mouthfeel and weight (e.g., light or syrupy)
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: balance
+    attributes:
+      label: Balance (平衡度)
+      description: Harmony among flavor, aftertaste, acidity, and body
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: clean_cup
+    attributes:
+      label: Clean Cup (干净度)
+      description: Free from interfering negative flavors or defects from start to finish
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: sweetness
+    attributes:
+      label: Sweetness (甜度)
+      description: Natural sweetness and pleasant fullness
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
+    validations:
+      required: true
+  - type: dropdown
+    id: overall
+    attributes:
+      label: Overall (总体评价)
+      description: Personal, comprehensive evaluation of overall quality and value
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+      default: 5
     validations:
       required: true
   - type: textarea
