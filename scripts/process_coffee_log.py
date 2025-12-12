@@ -160,13 +160,6 @@ def generate_radar_plot(scores, labels, output_path):
             bgcolor='rgba(0, 0, 0, 0)',  # Transparent background
         ),
         showlegend=False,
-        title=dict(
-            text='SCA Sensory Evaluation',
-            font=dict(size=18, color='white', family='Garamond, serif'),
-            x=0.5,
-            xanchor='center',
-            y=0.95,
-        ),
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent paper background
         plot_bgcolor='rgba(0, 0, 0, 0)',   # Transparent plot background
         margin=dict(l=80, r=80, t=100, b=80),
@@ -322,16 +315,12 @@ def generate_markdown(data, bean_name_for_filename):
     md_content = f"""# {today}
 
 !!! abstract "The 4:6 Recipe"
-    **Bean:** {bean}
-    **Roast:** {data.get(FIELD_ROAST_LEVEL, 'N/A')}
-    **Target:** {balance_text} & {strength_text}
-
+    *   **Bean:** {bean}
+    *   **Roast:** {data.get(FIELD_ROAST_LEVEL, 'N/A')}
     *   **Ratio:** 1:{ratio} ({dose}g In / {water}g Out)
     *   **Grinder:** {data.get(FIELD_GRINDER, 'N/A')}
     *   **Temp:** {data.get(FIELD_TEMP, 'N/A')}°C
-
-    **Phase 1 (Balance):** {int(first_pour)}g ➔ {int(second_pour)}g
-    **Phase 2 (Strength):** {strength_pours_count} x {int(strength_pour_amount)}g
+    *   **Phase 1 (Balance):** {int(first_pour)}g ➔ {int(second_pour)}g | **Phase 2 (Strength):** {strength_pours_count} x {int(strength_pour_amount)}g
 
 ## Timeline
 
