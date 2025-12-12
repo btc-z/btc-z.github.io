@@ -36,7 +36,7 @@ jobs:
         run: sudo apt-get install -y libglib2.0-0 libnss3 libfontconfig1
 
       - name: Install Python dependencies
-        run: pip install plotly==5.24.1 kaleido==0.2.1
+        run: pip install plotly==5.24.1 kaleido==0.2.1 jinja2
 
       - name: Process Issue
         env:
