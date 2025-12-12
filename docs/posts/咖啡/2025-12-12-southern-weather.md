@@ -24,4 +24,4 @@
 
 **Total Score:** 64/90
 
-> "用点滴最后90g的水，惊艳的是对比geometry这个的确要好喝些。虽然after taste有微弱的苦涩味."
+> "用点滴最后90g的水，惊艳的是对比geometry这个的确要好喝些。虽然after taste有微弱的苦涩味"
