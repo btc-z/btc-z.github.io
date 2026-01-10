@@ -7,7 +7,6 @@
 ### :ocean:
 
 - **2026-01-05 :material-hand-peace: [2026初的一些思考](posts/反思/2026年初.md)** 
-- **2025-10-16 :coffee: [理想的生活](posts/反思/理想的生活.md)**
 - **2024-11-01 :sailboat: [呼与吸的海](posts/反思/呼与吸的海.md)**
 
 ### :books:
