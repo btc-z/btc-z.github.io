@@ -1,22 +1,22 @@
-/* Import Noto Sans SC for Chinese */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+/* Import Nunito for English */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
 
-/* Import EB Garamond for English */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+/* Import LXGW WenKai for Chinese */
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css');
 
 /* Import Fira Code for code blocks */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 /* Set font stack for body text */
 :root {
-  --md-text-font: "EB Garamond", "Long Cang", serif;
+  --md-text-font: "Nunito", "LXGW WenKai", sans-serif;
   --md-code-font: "Fira Code", monospace;
 }
 
 /* Apply fonts to all text content */
 body,
 .md-typeset {
-  font-family: "Lora", "Noto Sans SC", sans-serif;
+  font-family: "Nunito", "LXGW WenKai", sans-serif;
 }
 
 /* Code blocks use monospace */
@@ -34,7 +34,7 @@ pre,
 .md-typeset h4,
 .md-typeset h5,
 .md-typeset h6 {
-  font-family: "Lora", "Noto Sans SC", sans-serif;
+  font-family: "Nunito", "LXGW WenKai", sans-serif;
   font-weight: 400;
 }
 
